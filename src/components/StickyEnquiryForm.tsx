@@ -107,25 +107,25 @@ const StickyEnquiryForm = () => {
         {/* Header - More compact for desktop */}
         <div className="text-center mb-3">
           <p className="text-blue-600 font-semibold text-xs mb-1">New Launch</p>
-          <h2 className="text-xl font-bold text-gray-800 mb-1">L&T WEST SQUARE SEAWOODS</h2>
-          <p className="text-xs text-gray-600 mb-1">At Sector 40, Seawoods, Navi Mumbai</p>
-          <p className="text-xs text-gray-600">By L&T Realty</p>
+          <h2 className="text-xl font-bold text-gray-800 mb-1">Godrej Sanpada</h2>
+          <p className="text-xs text-gray-600 mb-1">At Sanpada, Navi Mumbai</p>
+          <p className="text-xs text-gray-600">By Godrej Properties</p>
         </div>
 
         {/* EOI Benefits Box with Animation - Same as mobile */}
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 mb-3 animate-glow-pulse">
           <div className="space-y-1">
             <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
-              <span className="text-blue-600 font-semibold text-xs">✨ EOI Amount 50,000</span>
+              <span className="text-blue-600 font-semibold text-xs">🌊 Sea-Facing Premium Towers</span>
             </div>
             <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
-              <span className="text-blue-600 font-semibold text-xs">🏠 Vaastu Compliant Homes</span>
+              <span className="text-blue-600 font-semibold text-xs">🏡 Spacious Deck Homes</span>
             </div>
             <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
-              <span className="text-blue-600 font-semibold text-xs">⚡ Last Tower. Last Chance.</span>
+              <span className="text-blue-600 font-semibold text-xs">🌿 70% Open Green Spaces</span>
             </div>
             <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
-              <span className="text-blue-600 font-semibold text-xs">🌟 Larger Balconies</span>
+              <span className="text-blue-600 font-semibold text-xs">🏖️ Palm Beach Road Location</span>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ const StickyEnquiryForm = () => {
         <div className="text-center mb-3">
           <p className="text-gray-700 text-xs mb-1">Luxurious 2 & 3 BHK Starting At</p>
           <div className="text-xl font-bold text-gray-800">
-            <span className="text-blue-600">Rs. 2.17 Cr*</span>
+            <span className="text-blue-600">Rs. 3.5 Cr*</span>
             <span className="text-sm ml-1">Onwards</span>
           </div>
         </div>
@@ -213,23 +213,23 @@ const StickyEnquiryForm = () => {
 
         {/* Features - Compact */}
         <div className="mt-3 pt-3 border-t">
-          <h4 className="font-semibold text-gray-800 mb-2 text-xs">Why Choose L&T West Square?</h4>
+          <h4 className="font-semibold text-gray-800 mb-2 text-xs">Why Choose Godrej Eternal Palms?</h4>
           <ul className="space-y-1 text-xs text-gray-600">
             <li className="flex items-start">
               <span className="text-blue-600 mr-1">✓</span>
-              Premium location in Seawoods
+              Just off Palm Beach Road, Sanpada
             </li>
             <li className="flex items-start">
               <span className="text-blue-600 mr-1">✓</span>
-              25,000 sqft Grand Clubhouse
+              100+ Curated Premium Amenities
             </li>
             <li className="flex items-start">
               <span className="text-blue-600 mr-1">✓</span>
-              Near Seawoods Station & Mall
+              1.5 km from Vashi Railway Station
             </li>
             <li className="flex items-start">
               <span className="text-blue-600 mr-1">✓</span>
-              20 mins from New Airport
+              10 km from Navi Mumbai Airport
             </li>
           </ul>
         </div>

@@ -7,16 +7,12 @@ const BannerCarousel = () => {
   // Banner images
   const bannerImages = [
     {
-      src: '/img/banner1_11zon.webp',
+      src: '/img/banner/banner1.webp',
       alt: 'L&T West Square Seawoods - Luxury Residential Project'
     },
     {
-      src: '/img/banner2_11zon.webp',
+      src: '/img/banner/banner2.webp',
       alt: 'L&T West Square Seawoods - Premium Amenities'
-    },
-    {
-      src: '/img/banner3_11zon.webp',
-      alt: 'L&T West Square Seawoods - Modern Architecture'
     }
   ];
 
@@ -69,26 +65,25 @@ const BannerCarousel = () => {
             <div className="text-center">
               <p className="text-blue-600 font-semibold text-xs mb-1">New Launch</p>
               <h1 className="text-xl font-bold mb-1 text-gray-800">
-                L&T WEST SQUARE<br />
-                SEAWOODS
+                Godrej Sanpada
               </h1>
-              <p className="text-xs text-gray-600 mb-1">At Sector 40, Seawoods, Navi Mumbai</p>
-              <p className="text-xs text-gray-600 mb-3">By L&T Realty</p>
-              
+              <p className="text-xs text-gray-600 mb-1">At Sanpada, Navi Mumbai</p>
+              <p className="text-xs text-gray-600 mb-3">By Godrej Properties</p>
+
               {/* EOI Benefits Box with Animation - Same as mobile */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 mb-3 animate-glow-pulse">
                 <div className="space-y-1">
                   <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
-                    <span className="text-blue-600 font-semibold text-xs">✨ EOI Amount 50,000</span>
+                    <span className="text-blue-600 font-semibold text-xs">🌊 Sea-Facing Premium Towers</span>
                   </div>
                   <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
-                    <span className="text-blue-600 font-semibold text-xs">🏠 Vaastu Compliant Homes</span>
+                    <span className="text-blue-600 font-semibold text-xs">🏡 Spacious Deck Homes</span>
                   </div>
                   <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
-                    <span className="text-blue-600 font-semibold text-xs">⚡ Last Tower. Last Chance.</span>
+                    <span className="text-blue-600 font-semibold text-xs">🌿 70% Open Green Spaces</span>
                   </div>
                   <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
-                    <span className="text-blue-600 font-semibold text-xs">🌟 Larger Balconies</span>
+                    <span className="text-blue-600 font-semibold text-xs">🏖️ Palm Beach Road Location</span>
                   </div>
                 </div>
               </div>
@@ -97,7 +92,7 @@ const BannerCarousel = () => {
                 Luxurious 2 & 3 BHK Starting At
               </p>
               <div className="text-xl font-bold mb-3 text-gray-800 opacity-0 animate-fade-up" style={{ animationDelay: '1.2s' }}>
-                <span className="text-blue-600">Rs. 2.17 Cr*</span>
+                <span className="text-blue-600">Rs. 3.5 Cr*</span>
                 <span className="text-sm ml-1">Onwards</span>
               </div>
               
@@ -116,18 +111,18 @@ const BannerCarousel = () => {
       {/* No overlay for mobile - Clean carousel view */}
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 md:bottom-8 lg:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {bannerImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-2 h-2 lg:w-2 lg:h-2 rounded-full transition-all duration-200 ${
-              index === currentSlide 
-                ? 'bg-white' 
-                : 'bg-white bg-opacity-50 hover:bg-opacity-75'
-            } z-30 relative`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
+            <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 rounded-full transition-all duration-200 ${
+                    index === currentSlide
+                        ? 'bg-white'
+                        : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+            />
         ))}
       </div>
     </div>

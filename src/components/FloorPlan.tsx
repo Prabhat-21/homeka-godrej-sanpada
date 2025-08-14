@@ -6,7 +6,7 @@ const FloorPlan = () => {
 
   // Different images for each plan type - all should be floor plan layouts
   const planImages = {
-    master: '/img/562fb67c-8e1b-4484-bd3d-2091c5de4d1d.jpg', // Using floor plan image for master plan
+    master: '/img/gsmap.jpg', // Using floor plan image for master plan
     '2bhk': '/img/2bhk-768w.jpg',  // 2 BHK floor plan
     '3bhk': '/img/4efbfbd6-0194-4e92-b5f0-75aac1a66021.jpg'   // Using same style for consistency (update with 3BHK plan when available)
   };

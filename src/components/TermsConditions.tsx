@@ -29,7 +29,7 @@ const TermsConditions = () => {
 
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p>
-              Welcome to the L&T West Square website operated by Homeka Club Pvt Ltd ("<strong>Homeka Club Pvt Ltd</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>"). These Terms and Conditions ("<strong>Terms</strong>") govern your use of our website and services. By accessing or using our website, you agree to be bound by these Terms.
+              Welcome to the Godrej Sanpada operated by Homeka Club Pvt Ltd ("<strong>Homeka Club Pvt Ltd</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>"). These Terms and Conditions ("<strong>Terms</strong>") govern your use of our website and services. By accessing or using our website, you agree to be bound by these Terms.
             </p>
 
             <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">1. ACCEPTANCE OF TERMS</h2>
@@ -76,7 +76,7 @@ const TermsConditions = () => {
 
             <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">4.3 Developer Authorization</h3>
             <p>
-              We are authorized marketing partners for L&T West Square and have the necessary permissions to advertise and generate leads for this project. All developer materials, logos, and project information are used with proper authorization.
+              We are authorized marketing partners for Godrej Sanpada and have the necessary permissions to advertise and generate leads for this project. All developer materials, logos, and project information are used with proper authorization.
             </p>
 
             <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">5. USER REGISTRATION AND ACCOUNTS</h2>
@@ -100,7 +100,7 @@ const TermsConditions = () => {
 
             <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">6.2 Developer Content</h3>
             <p>
-              Project-specific content, including L&T West Square branding, logos, images, and materials, are the property of L&T Realty and are used with proper authorization for marketing purposes.
+              Project-specific content, including Godrej Sanpada branding, logos, images, and materials, are the property of Godrej Properties and are used with proper authorization for marketing purposes.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">6.3 Usage Restrictions</h3>

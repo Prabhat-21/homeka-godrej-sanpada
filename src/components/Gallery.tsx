@@ -6,11 +6,14 @@ const Gallery = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const galleryImages = [
-    '/img/gallery1.webp',
-    '/img/gallery2.webp',
-    '/img/gallery3.webp',
-    '/img/gallery4.webp',
-    '/img/gallery5.webp'
+    '/img/ammenties/1.jpg',
+    '/img/ammenties/2.jpg',
+    '/img/ammenties/3.jpg',
+    '/img/ammenties/4.jpg',
+    '/img/ammenties/5.jpg',
+    '/img/ammenties/6.webp',
+    '/img/ammenties/7.webp',
+    '/img/ammenties/8.webp',
   ];
 
   // Auto-slide functionality

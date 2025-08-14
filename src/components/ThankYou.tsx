@@ -54,7 +54,7 @@ const ThankYou = () => {
             Thanks for the enquiry, our team will contact you soon.
           </p>
           <p className="text-sm text-gray-500">
-            We appreciate your interest in L&T West Square Seawoods.
+            We appreciate your interest in Godrej Sanpada.
           </p>
         </div>
 

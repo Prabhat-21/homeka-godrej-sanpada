@@ -1,5 +1,4 @@
 import React from 'react';
-import { MapPin, Home, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { customerService } from '../lib/supabase';
 import { cleanPhoneNumber, formatPhoneDisplay, validatePhoneNumber, validatePhoneOnSubmit } from '../phone_validation';
 
@@ -176,25 +175,28 @@ const Hero = () => {
             <div className="text-center mb-3 md:mb-4">
               <p className="text-blue-600 font-semibold text-sm md:text-lg mb-1 md:mb-2">New Launch</p>
               <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2 text-gray-800">
-                L&T WEST SQUARE<br />
-                SEAWOODS
+                Godrej New Launch
               </h1>
-              <p className="text-gray-600 text-sm md:text-base mb-2 md:mb-4">At Sector 40, Seawoods, Navi Mumbai</p>
-              <p className="text-gray-600 text-sm md:text-base mb-2 md:mb-4">By L&T Realty</p>
-              
+              <p className="text-gray-600 text-sm md:text-base mb-2 md:mb-4">At Sanpada, Navi Mumbai</p>
+              <p className="text-gray-600 text-sm md:text-base mb-2 md:mb-4">By Godrej Properties</p>
+
+
               {/* EOI Benefits Box */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 md:p-3 mb-2 md:mb-4 animate-glow-pulse">
                 <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">✨ EOI Amount 50,000</span>
+                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🌊 Sea-Facing Premium Residences</span>
                 </div>
                 <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🏠 Vaastu Compliant Homes</span>
+                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🏗️ 2 Towers • G+35 Storeys</span>
                 </div>
                 <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">⚡ Last Tower. Last Chance.</span>
+                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🏡 Spacious Deck Homes</span>
                 </div>
-                <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🌟 Larger Balconies</span>
+                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
+                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🌿 70% Open Green Spaces</span>
+                </div>
+                <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '1.0s' }}>
+                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🏖️ Just off Palm Beach Road</span>
                 </div>
               </div>
               
@@ -202,7 +204,7 @@ const Hero = () => {
                 Luxurious 2 & 3 BHK Starting At
               </p>
               <div className="text-2xl md:text-5xl font-bold mb-2 md:mb-4 text-gray-800 opacity-0 animate-fade-up" style={{ animationDelay: '1.2s' }}>
-                <span className="text-blue-600">Rs. 2.17 Cr*</span>
+                <span className="text-blue-600">Rs. 3.5 Cr*</span>
                 <span className="text-base md:text-3xl ml-1 md:ml-2">Onwards</span>
               </div>
               

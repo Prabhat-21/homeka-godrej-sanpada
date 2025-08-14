@@ -74,7 +74,7 @@ const CustomerDashboard = () => {
                 <Users className="w-8 h-8 text-blue-600" />
                 <div>
                   <h1 className="text-2xl font-bold text-gray-800">Customer Dashboard</h1>
-                  <p className="text-gray-600">L&T West Square Leads</p>
+                  <p className="text-gray-600">Godrej Sanpada Leads</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">

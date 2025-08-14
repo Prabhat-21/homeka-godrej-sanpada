@@ -62,7 +62,7 @@ const Properties = () => {
               <div className="p-6">
                 <div className="flex items-center text-gray-500 text-sm mb-2">
                   <MapPin className="w-4 h-4 mr-1" />
-                  <span>West Square, Seawoods</span>
+                  <span>Godrej Sanpada</span>
                 </div>
                 
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{property.title}</h3>

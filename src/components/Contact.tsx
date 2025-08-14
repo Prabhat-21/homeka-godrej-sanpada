@@ -113,11 +113,11 @@ const Contact = () => {
           <div className="lg:hidden">
             <div className="max-w-2xl mx-auto">
               <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-                <div className="relative">
+                <div className="relative flex justify-center mt-2 md:mt-4">
                   <img
-                    src="/img/1.jpg"
-                    alt="L&T West Square Project View"
-                    className="w-full h-48 md:h-64 object-cover"
+                      src="/img/comman/logo.webp"
+                      alt="L&T West Square Project View"
+                      className="w-auto h-4 md:h-6 object-cover"
                   />
                 </div>
                 
@@ -207,14 +207,14 @@ const Contact = () => {
             {/* Compact Developer Branding Section */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
               <div className="flex items-center justify-center space-x-6 mb-3">
-                <img src="/img/comman/logo.svg" alt="L&T Realty Logo" className="h-12 w-auto" />
+                <img src="/img/comman/logo.webp" alt="L&T Realty Logo" className="h-6 w-auto" />
               </div>
 
               <p className="text-gray-600 text-sm mb-3 text-center">This project is RERA registered.</p>
 
               <div className="text-xs text-gray-600 mb-4 text-center">
                 <p>
-                  Project MAHARERA : PHASE 1 - P51700020275 | JASPER - P51700045793 | OPAL - P51700045794 | AMBER - P51700045795 | NORTH TOWERS - P51700026653 | West Square - P51700056254
+                  Agent MahaRERA No. – A51700000043 | Project MahaRERA No. – PM1330002500429
                 </p>
               </div>
 
@@ -248,21 +248,22 @@ const Contact = () => {
           <div className="lg:hidden mt-8">
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mb-4">
-                <img src="/img/comman/logo.svg" alt="L&T Realty Logo" className="h-12 w-auto" />
+                <img src="/img/comman/logo.webp" alt="L&T Realty Logo" className="h-6 w-auto" />
               </div>
 
               <p className="text-gray-600 text-sm mb-4 text-center">This project is RERA registered.</p>
 
               <div className="text-xs text-gray-600 mb-6 text-center">
                 <p>
-                  Project MAHARERA : PHASE 1 - P51700020275 | JASPER - P51700045793 | OPAL - P51700045794 | AMBER - P51700045795 | NORTH TOWERS - P51700026653 | West Square - P51700056254
+                  Agent MahaRERA No. – A51700000043 | Project MahaRERA No. – PM1330002500429
+
                 </p>
               </div>
 
               <div className="grid grid-cols-3 md:grid-cols-5 gap-4 mb-6">
                 {[1, 2, 3, 4, 5].map((index) => (
                   <div key={index} className="bg-gray-200 w-20 h-20 mx-auto rounded-lg flex items-center justify-center">
-                    <img src="/img/qr.webp" alt={`QR Code ${index}`} className="w-16 h-16" />
+                    <img src="/img/qr.png" alt={`QR Code ${index}`} className="w-16 h-16" />
                   </div>
                 ))}
               </div>

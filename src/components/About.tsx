@@ -10,19 +10,11 @@ const About = () => {
         <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg mb-6 lg:mb-6 text-center max-w-6xl mx-auto">
           <div className="max-h-64 lg:max-h-72 overflow-y-auto pr-4 lg:pr-0 text-gray-700 leading-relaxed lg:leading-loose text-base lg:text-lg">
             <p className="mb-6">
-              Introducing L&T West Square, the 5th and newest tower at Seawoods Residences by L&T Realty. Set in Navi Mumbai's most premium address, this low-density development offers exclusive 2 & 3 BHK homes with scenic views, smart layouts, and unmatched privacy. Crafted with L&T's hallmark construction quality, West Square blends elegance, comfort, and exclusivity in every detail.
+              Godrej Sanpada is the latest ultra-premium offering by Godrej Properties, located in the heart of Sanpada, Navi Mumbai. Spread across 4.5 acres with 3 luxurious residential towers, this under-construction development offers a fine blend of location, connectivity, and lifestyle.
+
             </p>
             <p className="mb-6">
-              Part of a grand 40-acre Transit-Oriented Development, West Square places you at the center of it all - next to Seawoods Mall, Seawoods Station, and Palm Beach Road. From serene gardens to premium amenities like a pool, gym, and jacuzzi, every moment here is thoughtfully designed for effortless, elevated living.
-            </p>
-            <p className="mb-6">
-              Experience luxury living with spacious 2 & 3 BHK apartments ranging from 1480 to 1640 sq. ft., and opulent 4 BHKs starting at 2900 sq. ft. Enjoy a vibrant lifestyle with a magnificent 2-floor clubhouse packed with leisure amenities for all ages. Embrace a holistic living experience in a thriving community that elevates your quality of life and investment potential.
-            </p>
-            <p className="mb-6">
-              The project features world-class amenities including a swimming pool, state-of-the-art gymnasium, children's play area, landscaped gardens, jogging track, and much more. With its strategic location and premium offerings, L&T West Square represents the perfect blend of luxury, convenience, and long-term value appreciation.
-            </p>
-            <p>
-              Discover a lifestyle that combines the tranquility of suburban living with the convenience of urban connectivity. L&T West Square is not just a home; it's a gateway to a premium lifestyle in one of Navi Mumbai's most sought-after locations.
+              Each home comes with a private deck and elegant finishes, designed for families who value both space and comfort. With limited-period launch offers and a 25:75 payment plan, this is the ideal time to invest in Sanpada’s most awaited landmark.
             </p>
           </div>
         </div>

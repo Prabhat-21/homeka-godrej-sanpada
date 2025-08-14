@@ -40,16 +40,16 @@ const Amenities = () => {
   // 2 sets of 4 images each
   const amenitySets = [
     [
-      { image: '/img/1 copy.jpg' },
-      { image: '/img/2 copy.jpg' },
-      { image: '/img/3 copy.jpg' },
-      { image: '/img/4 copy.jpg' }
+      { image: '/img/ammenties/1.jpg' },
+      { image: '/img/ammenties/2.jpg' },
+      { image: '/img/ammenties/3.jpg' },
+      { image: '/img/ammenties/4.jpg' }
     ],
     [
-      { image: '/img/5 copy.jpg' },
-      { image: '/img/6.webp' },
-      { image: '/img/7.webp' },
-      { image: '/img/8.webp' }
+      { image: '/img/ammenties/5.jpg' },
+      { image: '/img/ammenties/6.webp' },
+      { image: '/img/ammenties/7.webp' },
+      { image: '/img/ammenties/8.webp' }
     ]
   ];
 

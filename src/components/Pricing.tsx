@@ -15,7 +15,7 @@ const Pricing = () => {
             <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
               <div className="text-center">
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-2">2 BHK</h3>
-                <p className="text-gray-600 text-lg lg:text-xl mb-6">700 – 820 Sq.ft</p>
+                <p className="text-gray-600 text-lg lg:text-xl mb-6">800 Sq.ft</p>
                 
                 <button 
                   onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { 
@@ -36,7 +36,7 @@ const Pricing = () => {
             <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
               <div className="text-center">
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-2">3 BHK</h3>
-                <p className="text-gray-600 text-lg lg:text-xl mb-6">1050 Sq.ft</p>
+                <p className="text-gray-600 text-lg lg:text-xl mb-6">1200 Sq.ft</p>
                 
                 <button 
                   onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { 
