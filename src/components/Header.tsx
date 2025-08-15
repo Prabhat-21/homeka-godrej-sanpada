@@ -153,8 +153,11 @@ const Header = () => {
               {/* Bottom branding */}
               <div className="px-6 py-3 border-t border-gray-200 bg-gray-50">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-gray-500">BY PROPERTYPISTOL</span>
-                  <span className="text-xs text-gray-500">AUTHORIZED CHANNEL PARTNER</span>
+                  <div className="flex items-center space-x-2">
+                    <img src="/img/comman/homeka_logo.jpg" alt="Homeka Logo" className="h-4 w-auto" />
+                    <span className="text-xs text-gray-500">HOMEKA CLUB PVT LTD</span>
+                  </div>
+                  <span className="text-xs text-gray-500">AUTHORIZED PARTNER</span>
                 </div>
               </div>
             </div>
