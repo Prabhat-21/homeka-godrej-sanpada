@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Signal, ShoppingCart, GraduationCap, Laptop, Hospital, TreePine } from 'lucide-react';
+import { ChevronDown, Signal, ShoppingCart, GraduationCap, Building2 } from 'lucide-react';
 
 const Location = () => {
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
@@ -38,7 +38,7 @@ const Location = () => {
     { key: 'connectivity', title: 'Connectivity', icon: Signal, data: locationData.connectivity },
     { key: 'shopping', title: 'Malls & Landmarks', icon: ShoppingCart, data: locationData.shopping },
     { key: 'education', title: 'Schools & Colleges', icon: GraduationCap, data: locationData.education },
-    { key: 'hospitals', title: 'Hospitals', icon: Hospital, data: locationData.hospitals }
+    { key: 'hospitals', title: 'Hospitals', icon: Building2, data: locationData.hospitals }
   ];
 
   useEffect(() => {
