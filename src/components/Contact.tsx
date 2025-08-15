@@ -116,7 +116,7 @@ const Contact = () => {
                 <div className="relative flex justify-center mt-2 md:mt-4">
                   <img
                       src="/img/comman/logo.webp"
-                      alt="L&T West Square Project View"
+                      alt="Godrej Properties"
                       className="w-auto h-4 md:h-6 object-cover"
                   />
                 </div>
@@ -207,28 +207,29 @@ const Contact = () => {
             {/* Compact Developer Branding Section */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
               <div className="flex items-center justify-center space-x-6 mb-3">
-                <img src="/img/comman/logo.webp" alt="L&T Realty Logo" className="h-6 w-auto" />
+                <img src="/img/comman/logo.webp" alt="Godrej Properties Logo" className="h-6 w-auto" />
               </div>
 
-              <p className="text-gray-600 text-sm mb-3 text-center">This project is RERA registered.</p>
+              <p className="text-gray-600 text-sm mb-3 text-center">
+                Godrej Properties • NEW LAUNCH • SANPADA
+              </p>
 
               <div className="text-xs text-gray-600 mb-4 text-center">
                 <p>
-                  Agent MahaRERA No. – A51700000043 | Project MahaRERA No. – PM1330002500429
+                  Project MahaRERA No. – PM1330002500429
                 </p>
               </div>
 
-              <div className="grid grid-cols-5 gap-3 mb-4">
-                {[1, 2, 3, 4, 5].map((index) => (
-                  <div key={index} className="bg-gray-200 w-16 h-16 mx-auto rounded-lg flex items-center justify-center">
-                    <img src="/img/qr.webp" alt={`QR Code ${index}`} className="w-14 h-14" />
-                  </div>
-                ))}
+              {/* Single QR Code */}
+              <div className="flex justify-center mb-4">
+                <div className="bg-gray-200 w-24 h-24 rounded-lg flex items-center justify-center">
+                  <img src="/img/qr.webp" alt="RERA QR Code" className="w-20 h-20" />
+                </div>
               </div>
 
               <div className="text-xs text-gray-500 text-center mb-3">
                 <p>
-                  Disclaimer: Information for reference only. Prices and availability subject to change. Images are illustrative. Authorized marketing by Homeka Club Pvt Ltd.
+                  Disclaimer: Information for reference only. Prices and availability subject to change. Images are illustrative. Authorized marketing by Propertypistol Realty Private Limited.
                 </p>
               </div>
 
@@ -248,29 +249,29 @@ const Contact = () => {
           <div className="lg:hidden mt-8">
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mb-4">
-                <img src="/img/comman/logo.webp" alt="L&T Realty Logo" className="h-6 w-auto" />
+                <img src="/img/comman/logo.webp" alt="Godrej Properties Logo" className="h-6 w-auto" />
               </div>
 
-              <p className="text-gray-600 text-sm mb-4 text-center">This project is RERA registered.</p>
+              <p className="text-gray-600 text-sm mb-4 text-center">
+                Godrej Properties • NEW LAUNCH • SANPADA
+              </p>
 
               <div className="text-xs text-gray-600 mb-6 text-center">
                 <p>
-                  Agent MahaRERA No. – A51700000043 | Project MahaRERA No. – PM1330002500429
-
+                  Project MahaRERA No. – PM1330002500429
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 md:grid-cols-5 gap-4 mb-6">
-                {[1, 2, 3, 4, 5].map((index) => (
-                  <div key={index} className="bg-gray-200 w-20 h-20 mx-auto rounded-lg flex items-center justify-center">
-                    <img src="/img/qr.png" alt={`QR Code ${index}`} className="w-16 h-16" />
-                  </div>
-                ))}
+              {/* Single QR Code for Mobile */}
+              <div className="flex justify-center mb-6">
+                <div className="bg-gray-200 w-24 h-24 rounded-lg flex items-center justify-center">
+                  <img src="/img/qr.webp" alt="RERA QR Code" className="w-20 h-20" />
+                </div>
               </div>
 
               <div className="text-xs text-gray-500 mb-4 text-center">
                 <p>
-                  Disclaimer: The information provided on this website is for informational purposes only. Prices subject to change. Images are illustrative. Authorized marketing partner: Homeka Club Pvt Ltd.
+                  Disclaimer: The information provided on this website is for informational purposes only. Prices subject to change. Images are illustrative. Authorized marketing partner: Propertypistol Realty Private Limited.
                 </p>
               </div>
 

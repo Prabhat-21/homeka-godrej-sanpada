@@ -6,7 +6,7 @@ const TextCarousel = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   
   const messages = [
-    "An investment with perfect blend of luxury, location, and long-term value in Seawoods",
+    "An investment with perfect blend of luxury, location, and long-term value in Sanpada",
     "A grand clubhouse (25,000 sqft) for social events and leisure activities", 
     "100 steps from Nexus Mall, Seawoods Station & Palm Beach Rd",
     "20 mins from upcoming Navi Mumbai International Airport"
@@ -47,7 +47,6 @@ const TextCarousel = () => {
 };
 
 const Hero = () => {
-  // Replace state with refs for form data
   const formDataRef = React.useRef({
     name: '',
     phone: ''
@@ -57,7 +56,6 @@ const Hero = () => {
   const [submitMessage, setSubmitMessage] = React.useState('');
   const [phoneError, setPhoneError] = React.useState('');
 
-  // Input refs for direct DOM access
   const nameInputRef = React.useRef(null);
   const phoneInputRef = React.useRef(null);
 
@@ -70,9 +68,8 @@ const Hero = () => {
   const handleSubmit = React.useCallback(async (e) => {
     e.preventDefault();
     
-    // Get current values from refs
     const currentName = formDataRef.current.name;
-    const currentPhone = formDataRef.current.phone; // This is already cleaned (10 digits only)
+    const currentPhone = formDataRef.current.phone;
     
     if (!currentName.trim() || !currentPhone.trim()) {
       setSubmitMessage('Please fill in all required fields.');
@@ -90,11 +87,9 @@ const Hero = () => {
     setPhoneError('');
 
     try {
-      // Check if customer already exists
       const existingCustomer = await customerService.getCustomerByPhone(currentPhone);
       
       if (existingCustomer) {
-        // Update existing customer
         await customerService.updateCustomer(existingCustomer.id, {
           name: currentName,
           source: 'hero_form',
@@ -103,10 +98,9 @@ const Hero = () => {
         });
         setSubmitMessage('Thank you! We have updated your pre-registration.');
       } else {
-        // Create new customer
         await customerService.createCustomer({
           name: currentName,
-          phone: currentPhone, // Storing clean 10-digit number
+          phone: currentPhone,
           source: 'hero_form',
           interest_type: 'pre_registration',
           notes: 'Pre-registered from hero section'
@@ -114,12 +108,10 @@ const Hero = () => {
         setSubmitMessage('Thank you for your registration! Redirecting...');
       }
 
-      // Reset form refs
       formDataRef.current = { name: '', phone: '' };
       if (nameInputRef.current) nameInputRef.current.value = '';
       if (phoneInputRef.current) phoneInputRef.current.value = '';
       
-      // Mark that a form has been submitted
       localStorage.setItem('hasSubmittedForm', 'true');
       
       setTimeout(() => {
@@ -137,26 +129,19 @@ const Hero = () => {
     const { name, value } = e.target;
     
     if (name === 'phone') {
-      // Format the display value
       const displayValue = formatPhoneDisplay(value);
-      
-      // Clean the phone number for storage (removes +91/0 prefix)
       const cleanedPhone = cleanPhoneNumber(value);
       
-      // Update input display value
       e.target.value = displayValue;
       
-      // Update ref with cleaned value for submission
       formDataRef.current = {
         ...formDataRef.current,
-        [name]: cleanedPhone // Store only the 10-digit number
+        [name]: cleanedPhone
       };
       
-      // Validate
       const error = validatePhoneNumber(value);
       setPhoneError(error);
     } else {
-      // Update ref for name field
       formDataRef.current = {
         ...formDataRef.current,
         [name]: value
@@ -180,22 +165,18 @@ const Hero = () => {
               <p className="text-gray-600 text-sm md:text-base mb-2 md:mb-4">At Sanpada, Navi Mumbai</p>
               <p className="text-gray-600 text-sm md:text-base mb-2 md:mb-4">By Godrej Properties</p>
 
-
-              {/* EOI Benefits Box */}
+              {/* EOI Benefits Box - Updated without Sea-Facing */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 md:p-3 mb-2 md:mb-4 animate-glow-pulse">
                 <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🌊 Sea-Facing Premium Residences</span>
-                </div>
-                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
                   <span className="text-blue-600 font-semibold text-sm md:text-lg">🏗️ 2 Towers • G+35 Storeys</span>
                 </div>
-                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
+                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
                   <span className="text-blue-600 font-semibold text-sm md:text-lg">🏡 Spacious Deck Homes</span>
                 </div>
-                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
+                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
                   <span className="text-blue-600 font-semibold text-sm md:text-lg">🌿 70% Open Green Spaces</span>
                 </div>
-                <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '1.0s' }}>
+                <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
                   <span className="text-blue-600 font-semibold text-sm md:text-lg">🏖️ Just off Palm Beach Road</span>
                 </div>
               </div>
@@ -222,7 +203,6 @@ const Hero = () => {
           <div id="hero-form" className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-4 md:p-6">
             <h3 className="text-xl md:text-3xl font-bold mb-3 md:mb-4 text-center">Pre-Register here for Best Offers</h3>
             
-            {/* Text Carousel with Dots */}
             <TextCarousel />
             
             <form onSubmit={handleSubmit} className="space-y-4">

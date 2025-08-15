@@ -8,11 +8,11 @@ const BannerCarousel = () => {
   const bannerImages = [
     {
       src: '/img/banner/banner1.webp',
-      alt: 'L&T West Square Seawoods - Luxury Residential Project'
+      alt: 'Godrej Sanpada - Luxury Residential Project'
     },
     {
       src: '/img/banner/banner2.webp',
-      alt: 'L&T West Square Seawoods - Premium Amenities'
+      alt: 'Godrej Sanpada - Premium Amenities'
     }
   ];
 
@@ -57,7 +57,7 @@ const BannerCarousel = () => {
         ))}
       </div>
 
-      {/* Desktop Overlay - Updated to match mobile content */}
+      {/* Desktop Overlay - Updated without Sea-Facing text */}
       <div className="hidden lg:block absolute inset-0 z-20">
         <div className="container mx-auto px-4 h-full flex items-center">
           {/* Left Content Card - Updated with mobile-like content */}
@@ -70,11 +70,11 @@ const BannerCarousel = () => {
               <p className="text-xs text-gray-600 mb-1">At Sanpada, Navi Mumbai</p>
               <p className="text-xs text-gray-600 mb-3">By Godrej Properties</p>
 
-              {/* EOI Benefits Box with Animation - Same as mobile */}
+              {/* EOI Benefits Box with Animation - Updated without Sea-Facing */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 mb-3 animate-glow-pulse">
                 <div className="space-y-1">
                   <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
-                    <span className="text-blue-600 font-semibold text-xs">🌊 Sea-Facing Premium Towers</span>
+                    <span className="text-blue-600 font-semibold text-xs">🏗️ 2 Towers • G+35 Storeys</span>
                   </div>
                   <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
                     <span className="text-blue-600 font-semibold text-xs">🏡 Spacious Deck Homes</span>
