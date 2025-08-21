@@ -3,7 +3,7 @@ import { Phone, Send } from 'lucide-react';
 
 const StickyFooter = () => {
   const handleWhatsAppClick = () => {
-    const whatsappUrl = 'https://wa.me/919702978506?text=I%20am%20interested%20in%20L%26T%20WestSquare%20at%20seawoods%2C%20please%20share%20all%20the%20details';
+    const whatsappUrl = 'https://wa.me/919702978506?text=I%20am%20interested%20in%20Godrej%20Sanpada%20at%20Sanpada%2C%20Navi%20Mumbai%2C%20please%20share%20all%20the%20details';
     
     // Open WhatsApp in a new window
     const whatsappWindow = window.open(whatsappUrl, '_blank');
