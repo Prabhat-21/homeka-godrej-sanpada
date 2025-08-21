@@ -78,7 +78,7 @@ const Header = () => {
 
   const mobileMenuItems = [
     { id: 'home', label: 'Home', icon: Home },
-    { id: 'costing', label: 'Proposed Price', icon: DollarSign, action: 'popup' },
+    { id: 'sc-price', label: 'Proposed Price', icon: DollarSign },
     { id: 'floor-plan', label: 'Site Plan', icon: Layout },
     { id: 'amenities', label: 'Amenities', icon: Wifi },
     { id: 'connectivity', label: 'Location', icon: MapPin },
@@ -88,7 +88,7 @@ const Header = () => {
   const handleMobileMenuClick = (item: any) => {
     if (item.action === 'popup') {
       window.dispatchEvent(new CustomEvent('showEngagementPopup', { 
-        detail: { type: item.id === 'costing' ? 'costing' : 'brochure' } 
+        detail: { type: 'brochure' } 
       }));
       setIsMenuOpen(false);
     } else {
