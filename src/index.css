@@ -7,6 +7,54 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Mobile-specific compact styles - Reduced spacing */
+@media (max-width: 1023px) {
+  /* Reduce section padding for mobile */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Smaller fonts and spacing for mobile content */
+  .container h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .container h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .container h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .container p {
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Compact spacing for mobile */
+  .container .mb-8 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .container .mb-6 {
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .container .py-12 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .container .py-20 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
 /* Desktop-specific compact styles */
 @media (min-width: 1024px) {
   /* Reduce section padding for desktop */
