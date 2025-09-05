@@ -47,42 +47,49 @@ const DesktopBanner = () => {
         ))}
       </div>
 
-      {/* Left Content Card */}
+      {/* Left Content Card - Smaller and with animations */}
       <div className="absolute inset-0">
         <div className="container mx-auto px-6 h-full flex items-center">
-          <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-md">
+          <div className="bg-white rounded-2xl p-6 shadow-2xl max-w-sm">
             <div className="text-center">
-              <p className="text-blue-600 font-semibold text-sm mb-2">New Launch</p>
-              <h1 className="text-3xl font-bold mb-2 text-gray-800">Godrej Sanpada</h1>
-              <p className="text-sm text-gray-600 mb-1">At Sanpada, Navi Mumbai</p>
-              <p className="text-sm text-gray-600 mb-4">By Godrej Properties</p>
+              <p className="text-blue-600 font-semibold text-xs mb-1">New Launch</p>
+              <h1 className="text-2xl font-bold mb-1 text-gray-800">Godrej Sanpada</h1>
+              <p className="text-xs text-gray-600 mb-0.5">At Sanpada, Navi Mumbai</p>
+              <p className="text-xs text-gray-600 mb-3">By Godrej Properties</p>
 
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-4 mb-4">
-                <div className="space-y-2">
-                  <div className="flex items-center justify-center">
-                    <span className="text-blue-600 font-semibold text-sm">🏗️ 2 Towers • G+35 Storeys</span>
+              {/* Benefits Box with Animations - All 5 points */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-3 mb-3 animate-glow-pulse">
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
+                    <span className="text-blue-600 font-semibold text-xs">🏗️ 2 Towers • G+35 Storeys</span>
                   </div>
-                  <div className="flex items-center justify-center">
-                    <span className="text-blue-600 font-semibold text-sm">🏡 Spacious Deck Homes</span>
+                  <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
+                    <span className="text-blue-600 font-semibold text-xs">🌊 Sea-Facing Premium Towers</span>
                   </div>
-                  <div className="flex items-center justify-center">
-                    <span className="text-blue-600 font-semibold text-sm">🌿 70% Open Green Spaces</span>
+                  <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
+                    <span className="text-blue-600 font-semibold text-xs">🏡 Spacious Deck Homes</span>
                   </div>
-                  <div className="flex items-center justify-center">
-                    <span className="text-blue-600 font-semibold text-sm">🏖️ Palm Beach Road Location</span>
+                  <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
+                    <span className="text-blue-600 font-semibold text-xs">🌿 70% Open Green Spaces</span>
+                  </div>
+                  <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '1s' }}>
+                    <span className="text-blue-600 font-semibold text-xs">🏖️ Palm Beach Road Location</span>
                   </div>
                 </div>
               </div>
               
-              <p className="text-gray-700 text-lg mb-2">Luxurious 2 & 3 BHK Starting At</p>
-              <div className="text-3xl font-bold mb-4 text-gray-800">
+              <p className="text-gray-700 text-sm mb-1 opacity-0 animate-fade-up" style={{ animationDelay: '1.2s' }}>
+                Luxurious 2 & 3 BHK Starting At
+              </p>
+              <div className="text-2xl font-bold mb-3 text-gray-800 opacity-0 animate-fade-up" style={{ animationDelay: '1.4s' }}>
                 <span className="text-blue-600">Rs. 3.5 Cr*</span>
-                <span className="text-xl ml-2">Onwards</span>
+                <span className="text-base ml-1">Onwards</span>
               </div>
               
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'costing' } }))}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-lg text-sm transition-all transform hover:scale-105 opacity-0 animate-fade-up"
+                style={{ animationDelay: '1.6s' }}
               >
                 Check Full Price Break Up
               </button>
