@@ -82,19 +82,19 @@ function App() {
                         <p className="text-xs text-gray-600 font-medium">AUTHORIZED CHANNEL PARTNER</p>
                       </div>
 
-                      {/* CTA Buttons */}
-                      <div className="flex items-center space-x-4">
+                      {/* CTA Buttons - Smaller width */}
+                      <div className="flex items-center space-x-3">
                         <button 
                           onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'site_visit' } }))}
-                          className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded text-sm font-medium"
+                          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-medium"
                         >
                           Organize Site Visit
                         </button>
                         <a 
                           href="tel:+919702978506" 
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-medium flex items-center"
+                          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium flex items-center"
                         >
-                          📞 +91 97029 78506
+                          <span className="text-xs">📞 +91 97029 78506</span>
                         </a>
                       </div>
                     </div>
