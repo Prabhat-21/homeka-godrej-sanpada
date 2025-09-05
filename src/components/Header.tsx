@@ -6,16 +6,13 @@ const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if we're on mobile on mount
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
-      // Close menu if we're on desktop
       if (window.innerWidth >= 1024) {
         setIsMenuOpen(false);
       }
     };
 
-    // Initial check
     checkMobile();
 
     const handleCloseMobileMenu = () => {
@@ -29,28 +26,23 @@ const Header = () => {
     };
 
     const handlePopupOpen = () => {
-      // Close mobile menu when popup opens
       if (isMenuOpen) {
         setIsMenuOpen(false);
       }
     };
 
-    // Handle window resize
     const handleResize = () => {
       checkMobile();
     };
 
-    // Add scroll listener when menu is open
     if (isMenuOpen) {
       window.addEventListener('scroll', handleScroll);
     }
 
-    // Listen for popup events
     window.addEventListener('showEngagementPopup', handlePopupOpen);
     window.addEventListener('closeMobileMenu', handleCloseMobileMenu);
     window.addEventListener('resize', handleResize);
 
-    // Cleanup function
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('showEngagementPopup', handlePopupOpen);
@@ -66,9 +58,10 @@ const Header = () => {
       const element = document.getElementById(elementId);
       if (element) {
         const headerHeight = 60;
-        const elementPosition = element.offsetTop - headerHeight;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
         window.scrollTo({
-          top: elementPosition,
+          top: offsetPosition,
           behavior: 'smooth'
         });
       }
@@ -78,10 +71,13 @@ const Header = () => {
 
   const mobileMenuItems = [
     { id: 'home', label: 'Home', icon: Home },
+    { id: 'overview', label: 'Overview', icon: Home },
     { id: 'sc-price', label: 'Proposed Price', icon: DollarSign },
     { id: 'floor-plan', label: 'Site Plan', icon: Layout },
     { id: 'amenities', label: 'Amenities', icon: Wifi },
     { id: 'connectivity', label: 'Location', icon: MapPin },
+    { id: 'gallery', label: 'Gallery', icon: Home },
+    { id: 'contact', label: 'Contact', icon: Home },
     { id: 'brochure', label: 'Brochure', icon: Download, action: 'popup' }
   ];
 
@@ -97,8 +93,8 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-[10001] h-20 lg:h-16">
-      <div className="container mx-auto px-3 py-3 lg:py-2 max-w-7xl relative z-[10002] h-full">
+    <header className="bg-white shadow-lg sticky top-0 z-[10001] h-16 lg:h-20">
+      <div className="container mx-auto px-3 py-2 lg:py-2 max-w-7xl relative z-[10002] h-full">
         <div className="flex items-center h-full">
           {/* Logo Section */}
           <div className="flex items-center">
@@ -107,17 +103,17 @@ const Header = () => {
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden lg:flex items-center space-x-8 mx-auto">
-            <button onClick={() => smoothScrollTo('home')} className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm">Home</button>
-            <button onClick={() => smoothScrollTo('overview')} className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm">Overview</button>
-            <button onClick={() => smoothScrollTo('floor-plan')} className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm">Layout</button>
-            <button onClick={() => smoothScrollTo('sc-price')} className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm">Pricing</button>
-            <button onClick={() => smoothScrollTo('amenities')} className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm">Amenities</button>
-            <button onClick={() => smoothScrollTo('gallery')} className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm">Gallery</button>
-            <button onClick={() => smoothScrollTo('connectivity')} className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm">Location</button>
-            <button onClick={() => smoothScrollTo('contact')} className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm">Contact</button>
+            <button onClick={() => smoothScrollTo('home')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Home</button>
+            <button onClick={() => smoothScrollTo('overview')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Overview</button>
+            <button onClick={() => smoothScrollTo('floor-plan')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Layout</button>
+            <button onClick={() => smoothScrollTo('sc-price')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Pricing</button>
+            <button onClick={() => smoothScrollTo('amenities')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Amenities</button>
+            <button onClick={() => smoothScrollTo('gallery')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Gallery</button>
+            <button onClick={() => smoothScrollTo('connectivity')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Location</button>
+            <button onClick={() => smoothScrollTo('contact')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Contact</button>
           </nav>
 
-          {/* Mobile menu button - only shows on mobile devices */}
+          {/* Mobile menu button */}
           {isMobile && (
             <button
               className="relative z-[10002] p-3 -m-3 touch-manipulation ml-auto"
@@ -150,11 +146,11 @@ const Header = () => {
                 </button>
               ))}
               
-              {/* Bottom branding */}
+              {/* Bottom branding with larger logo */}
               <div className="px-6 py-3 border-t border-gray-200 bg-gray-50">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <img src="/img/comman/homeka_logo.jpg" alt="Homeka Logo" className="h-4 w-auto" />
+                    <img src="/img/comman/homeka_logo.jpg" alt="Homeka Logo" className="h-6 w-auto" />
                     <span className="text-xs text-gray-500">HOMEKA CLUB PVT LTD</span>
                   </div>
                   <span className="text-xs text-gray-500">AUTHORIZED PARTNER</span>
