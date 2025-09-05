@@ -101,7 +101,7 @@ function App() {
                 {/* Main Content with Sidebar Layout */}
                 <div className="flex pt-20">
                   {/* Main Content Area */}
-                  <div className="flex-1 mr-[400px]">
+                  <div className="flex-1 mr-[420px]">
                     {/* Desktop Banner with Overlay */}
                     <DesktopBanner />
                     
@@ -116,9 +116,11 @@ function App() {
                     <Footer />
                   </div>
                   
-                  {/* Sticky Form Sidebar */}
-                  <div className="w-[400px] fixed right-0 top-20 bottom-0 z-[999]">
-                    <StickyEnquiryForm />
+                  {/* Sticky Form Sidebar - More separated design */}
+                  <div className="w-[400px] fixed right-5 top-24 bottom-5 z-[999]">
+                    <div className="h-full bg-white rounded-lg shadow-2xl border border-gray-200">
+                      <StickyEnquiryForm />
+                    </div>
                   </div>
                 </div>
               </div>
