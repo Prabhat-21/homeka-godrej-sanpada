@@ -73,14 +73,8 @@ function App() {
                       <button onClick={() => scrollToSection('connectivity')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Location</button>
                     </nav>
                     
-                    {/* Right Section with Branding and CTAs */}
-                    <div className="flex items-center space-x-4 flex-shrink-0">
-                      {/* Partner Branding */}
-                      <div className="text-right">
-                        <p className="text-xs text-gray-500 leading-tight">BY HOMEKA</p>
-                        <p className="text-xs text-gray-600 font-medium leading-tight">AUTHORIZED CHANNEL PARTNER</p>
-                      </div>
-
+                    {/* Right Section with CTAs */}
+                    <div className="flex items-center space-x-3 flex-shrink-0">
                       {/* CTA Buttons */}
                       <button 
                         onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'site_visit' } }))}
