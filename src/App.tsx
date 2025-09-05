@@ -54,10 +54,10 @@ function App() {
             <>
               {/* Desktop Layout with Integrated Design */}
               <div className="hidden lg:block">
-                {/* Fixed Integrated Header + Form */}
+                {/* Fixed Header with Form CTAs */}
                 <div className="fixed top-0 left-0 right-0 z-[1000] bg-white shadow-lg">
                   <div className="flex h-20">
-                    {/* Left Section - Logo and Navigation */}
+                    {/* Main Header Content - Full Width */}
                     <div className="flex-1 flex items-center px-6">
                       {/* Logo */}
                       <div className="mr-8">
@@ -76,35 +76,35 @@ function App() {
                         <button onClick={() => scrollToSection('connectivity')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Location</button>
                       </nav>
                       
-                      {/* Partner Branding */}
+                      {/* Partner Branding - Moved to left of CTAs */}
                       <div className="ml-auto mr-6 text-right">
                         <p className="text-xs text-gray-500">BY HOMEKA</p>
                         <p className="text-xs text-gray-600 font-medium">AUTHORIZED CHANNEL PARTNER</p>
                       </div>
-                    </div>
 
-                    {/* Right Section - Sticky Form Header */}
-                    <div className="w-[400px] bg-gray-50 border-l border-gray-200 flex items-center justify-around px-4">
-                      <button 
-                        onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'site_visit' } }))}
-                        className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded text-sm font-medium"
-                      >
-                        Organize Site Visit
-                      </button>
-                      <a 
-                        href="tel:+919702978506" 
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-medium flex items-center"
-                      >
-                        📞 +91 97029 78506
-                      </a>
+                      {/* CTA Buttons */}
+                      <div className="flex items-center space-x-4">
+                        <button 
+                          onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'site_visit' } }))}
+                          className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded text-sm font-medium"
+                        >
+                          Organize Site Visit
+                        </button>
+                        <a 
+                          href="tel:+919702978506" 
+                          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-sm font-medium flex items-center"
+                        >
+                          📞 +91 97029 78506
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Main Content Layout */}
+                {/* Main Content with Sidebar Layout */}
                 <div className="flex pt-20">
-                  {/* Main Content Area */}
-                  <div className="flex-1">
+                  {/* Main Content Area - Takes up space minus sidebar */}
+                  <div className="flex-1 mr-[400px]">
                     {/* Desktop Banner with Overlay */}
                     <DesktopBanner />
                     
@@ -119,8 +119,8 @@ function App() {
                     <Footer />
                   </div>
                   
-                  {/* Sticky Form - Attached to Header */}
-                  <div className="w-[400px] fixed right-0 top-20 bottom-0 z-[999] bg-white shadow-xl border-l border-gray-200">
+                  {/* Sticky Form Sidebar - Fixed width */}
+                  <div className="w-[400px] fixed right-0 top-20 bottom-0 z-[999]">
                     <StickyEnquiryForm />
                   </div>
                 </div>
