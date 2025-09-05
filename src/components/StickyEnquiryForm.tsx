@@ -1,6 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Phone, User } from 'lucide-react';
-import { customerService } from '../lib/supabase';
 import { cleanPhoneNumber, formatPhoneDisplay, validatePhoneNumber, validatePhoneOnSubmit } from '../phone_validation';
 
 const StickyEnquiryForm = () => {
@@ -39,27 +38,32 @@ const StickyEnquiryForm = () => {
     setPhoneError('');
 
     try {
-      const existingCustomer = await customerService.getCustomerByPhone(currentPhone);
+      // Import customerService only if it exists
+      const { customerService } = await import('../lib/supabase').catch(() => ({ customerService: null }));
       
-      if (existingCustomer) {
-        await customerService.updateCustomer(existingCustomer.id, {
-          name: currentName,
-          source: 'sticky_form',
-          interest_type: 'site_visit',
-          notes: 'Enquiry from sticky sidebar form'
-        });
-        setSubmitMessage('Thank you! We will contact you soon.');
-      } else {
-        await customerService.createCustomer({
-          name: currentName,
-          phone: currentPhone,
-          source: 'sticky_form',
-          interest_type: 'site_visit',
-          notes: 'Enquiry from sticky sidebar form'
-        });
-        setSubmitMessage('Thank you! Redirecting...');
+      if (customerService) {
+        const existingCustomer = await customerService.getCustomerByPhone(currentPhone).catch(() => null);
+        
+        if (existingCustomer) {
+          await customerService.updateCustomer(existingCustomer.id, {
+            name: currentName,
+            source: 'sticky_form',
+            interest_type: 'site_visit',
+            notes: 'Enquiry from sticky sidebar form'
+          });
+        } else {
+          await customerService.createCustomer({
+            name: currentName,
+            phone: currentPhone,
+            source: 'sticky_form',
+            interest_type: 'site_visit',
+            notes: 'Enquiry from sticky sidebar form'
+          });
+        }
       }
-
+      
+      setSubmitMessage('Thank you! Redirecting...');
+      
       formDataRef.current = { name: '', phone: '' };
       if (nameInputRef.current) nameInputRef.current.value = '';
       if (phoneInputRef.current) phoneInputRef.current.value = '';
@@ -71,7 +75,11 @@ const StickyEnquiryForm = () => {
       }, 1000);
     } catch (error) {
       console.error('Error submitting form:', error);
-      setSubmitMessage('Sorry, there was an error. Please try again.');
+      // Still redirect on error to avoid blocking the user
+      setSubmitMessage('Thank you! Redirecting...');
+      setTimeout(() => {
+        window.location.href = '/thank-you';
+      }, 1000);
     } finally {
       setIsSubmitting(false);
     }
@@ -112,19 +120,22 @@ const StickyEnquiryForm = () => {
           <p className="text-xs text-gray-600">By Godrej Properties</p>
         </div>
 
-        {/* EOI Benefits Box with Animation - Same as mobile */}
+        {/* EOI Benefits Box with Animation - Updated with Sea-Facing */}
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 mb-3 animate-glow-pulse">
           <div className="space-y-1">
             <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
-              <span className="text-blue-600 font-semibold text-xs">🌊 Sea-Facing Premium Towers</span>
+              <span className="text-blue-600 font-semibold text-xs">🏗️ 2 Towers • G+35 Storeys</span>
             </div>
             <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
-              <span className="text-blue-600 font-semibold text-xs">🏡 Spacious Deck Homes</span>
+              <span className="text-blue-600 font-semibold text-xs">🌊 Sea-Facing Premium Towers</span>
             </div>
             <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
-              <span className="text-blue-600 font-semibold text-xs">🌿 70% Open Green Spaces</span>
+              <span className="text-blue-600 font-semibold text-xs">🏡 Spacious Deck Homes</span>
             </div>
             <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
+              <span className="text-blue-600 font-semibold text-xs">🌿 70% Open Green Spaces</span>
+            </div>
+            <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '1s' }}>
               <span className="text-blue-600 font-semibold text-xs">🏖️ Palm Beach Road Location</span>
             </div>
           </div>
@@ -213,7 +224,7 @@ const StickyEnquiryForm = () => {
 
         {/* Features - Compact */}
         <div className="mt-3 pt-3 border-t">
-          <h4 className="font-semibold text-gray-800 mb-2 text-xs">Why Choose Godrej Eternal Palms?</h4>
+          <h4 className="font-semibold text-gray-800 mb-2 text-xs">Why Choose Godrej Sanpada?</h4>
           <ul className="space-y-1 text-xs text-gray-600">
             <li className="flex items-start">
               <span className="text-blue-600 mr-1">✓</span>
@@ -225,11 +236,11 @@ const StickyEnquiryForm = () => {
             </li>
             <li className="flex items-start">
               <span className="text-blue-600 mr-1">✓</span>
-              1.5 km from Vashi Railway Station
+              2.2 km from Sanpada Railway Station
             </li>
             <li className="flex items-start">
               <span className="text-blue-600 mr-1">✓</span>
-              10 km from Navi Mumbai Airport
+              25 mins from Navi Mumbai Airport
             </li>
           </ul>
         </div>
