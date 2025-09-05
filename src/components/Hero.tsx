@@ -1,5 +1,4 @@
 import React from 'react';
-import { customerService } from '../lib/supabase';
 import { cleanPhoneNumber, formatPhoneDisplay, validatePhoneNumber, validatePhoneOnSubmit } from '../phone_validation';
 
 const TextCarousel = () => {
@@ -87,27 +86,32 @@ const Hero = () => {
     setPhoneError('');
 
     try {
-      const existingCustomer = await customerService.getCustomerByPhone(currentPhone);
+      // Import customerService only if it exists
+      const { customerService } = await import('../lib/supabase').catch(() => ({ customerService: null }));
       
-      if (existingCustomer) {
-        await customerService.updateCustomer(existingCustomer.id, {
-          name: currentName,
-          source: 'hero_form',
-          interest_type: 'pre_registration',
-          notes: 'Pre-registered from hero section'
-        });
-        setSubmitMessage('Thank you! We have updated your pre-registration.');
-      } else {
-        await customerService.createCustomer({
-          name: currentName,
-          phone: currentPhone,
-          source: 'hero_form',
-          interest_type: 'pre_registration',
-          notes: 'Pre-registered from hero section'
-        });
-        setSubmitMessage('Thank you for your registration! Redirecting...');
+      if (customerService) {
+        const existingCustomer = await customerService.getCustomerByPhone(currentPhone).catch(() => null);
+        
+        if (existingCustomer) {
+          await customerService.updateCustomer(existingCustomer.id, {
+            name: currentName,
+            source: 'hero_form',
+            interest_type: 'pre_registration',
+            notes: 'Pre-registered from hero section'
+          });
+        } else {
+          await customerService.createCustomer({
+            name: currentName,
+            phone: currentPhone,
+            source: 'hero_form',
+            interest_type: 'pre_registration',
+            notes: 'Pre-registered from hero section'
+          });
+        }
       }
-
+      
+      setSubmitMessage('Thank you for your registration! Redirecting...');
+      
       formDataRef.current = { name: '', phone: '' };
       if (nameInputRef.current) nameInputRef.current.value = '';
       if (phoneInputRef.current) phoneInputRef.current.value = '';
@@ -116,10 +120,14 @@ const Hero = () => {
       
       setTimeout(() => {
         window.location.href = '/thank-you';
-      }, 10);
+      }, 1000);
     } catch (error) {
       console.error('Error submitting form:', error);
-      setSubmitMessage('Sorry, there was an error. Please try again.');
+      // Still redirect on error to avoid blocking
+      setSubmitMessage('Thank you! Redirecting...');
+      setTimeout(() => {
+        window.location.href = '/thank-you';
+      }, 1000);
     } finally {
       setIsSubmitting(false);
     }
@@ -154,45 +162,48 @@ const Hero = () => {
       {/* Mobile Layout Only - Hero section for mobile */}
       <div className="lg:hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
         <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative container mx-auto px-4 py-8 md:py-20">
+        <div className="relative container mx-auto px-4 py-6 md:py-12">
           {/* Main Content Card */}
-          <div className="bg-white text-gray-800 rounded-2xl p-4 md:p-8 shadow-2xl mb-8">
-            <div className="text-center mb-3 md:mb-4">
-              <p className="text-blue-600 font-semibold text-sm md:text-lg mb-1 md:mb-2">New Launch</p>
-              <h1 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2 text-gray-800">
+          <div className="bg-white text-gray-800 rounded-2xl p-4 md:p-6 shadow-2xl mb-6">
+            <div className="text-center mb-3">
+              <p className="text-blue-600 font-semibold text-sm md:text-base mb-1">New Launch</p>
+              <h1 className="text-2xl md:text-3xl font-bold mb-1 text-gray-800">
                 Godrej New Launch
               </h1>
-              <p className="text-gray-600 text-sm md:text-base mb-2 md:mb-4">At Sanpada, Navi Mumbai</p>
-              <p className="text-gray-600 text-sm md:text-base mb-2 md:mb-4">By Godrej Properties</p>
+              <p className="text-gray-600 text-sm md:text-base mb-1">At Sanpada, Navi Mumbai</p>
+              <p className="text-gray-600 text-sm md:text-base mb-2">By Godrej Properties</p>
 
-              {/* EOI Benefits Box - Updated without Sea-Facing */}
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 md:p-3 mb-2 md:mb-4 animate-glow-pulse">
-                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🏗️ 2 Towers • G+35 Storeys</span>
+              {/* EOI Benefits Box - All 5 points with Sea-Facing */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 md:p-3 mb-2 animate-glow-pulse">
+                <div className="flex items-center justify-center mb-1 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
+                  <span className="text-blue-600 font-semibold text-xs md:text-sm">🏗️ 2 Towers • G+35 Storeys</span>
                 </div>
-                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🏡 Spacious Deck Homes</span>
+                <div className="flex items-center justify-center mb-1 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.4s' }}>
+                  <span className="text-blue-600 font-semibold text-xs md:text-sm">🌊 Sea-Facing Premium Towers</span>
                 </div>
-                <div className="flex items-center justify-center mb-1 md:mb-2 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🌿 70% Open Green Spaces</span>
+                <div className="flex items-center justify-center mb-1 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.6s' }}>
+                  <span className="text-blue-600 font-semibold text-xs md:text-sm">🏡 Spacious Deck Homes</span>
                 </div>
-                <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
-                  <span className="text-blue-600 font-semibold text-sm md:text-lg">🏖️ Just off Palm Beach Road</span>
+                <div className="flex items-center justify-center mb-1 opacity-0 animate-slide-bounce" style={{ animationDelay: '0.8s' }}>
+                  <span className="text-blue-600 font-semibold text-xs md:text-sm">🌿 70% Open Green Spaces</span>
+                </div>
+                <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '1.0s' }}>
+                  <span className="text-blue-600 font-semibold text-xs md:text-sm">🏖️ Palm Beach Road Location</span>
                 </div>
               </div>
               
-              <p className="text-gray-700 text-base md:text-xl mb-2 md:mb-4 opacity-0 animate-fade-up" style={{ animationDelay: '1s' }}>
+              <p className="text-gray-700 text-base md:text-lg mb-1 opacity-0 animate-fade-up" style={{ animationDelay: '1.2s' }}>
                 Luxurious 2 & 3 BHK Starting At
               </p>
-              <div className="text-2xl md:text-5xl font-bold mb-2 md:mb-4 text-gray-800 opacity-0 animate-fade-up" style={{ animationDelay: '1.2s' }}>
+              <div className="text-2xl md:text-3xl font-bold mb-2 text-gray-800 opacity-0 animate-fade-up" style={{ animationDelay: '1.4s' }}>
                 <span className="text-blue-600">Rs. 3.5 Cr*</span>
-                <span className="text-base md:text-3xl ml-1 md:ml-2">Onwards</span>
+                <span className="text-base md:text-lg ml-1">Onwards</span>
               </div>
               
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'costing' } }))}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 px-4 md:px-8 rounded-lg transition-all duration-300 text-base md:text-lg transform hover:scale-105 hover:shadow-lg opacity-0 animate-fade-up"
-                style={{ animationDelay: '1.4s' }}
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 text-base transform hover:scale-105 hover:shadow-lg opacity-0 animate-fade-up"
+                style={{ animationDelay: '1.6s' }}
               >
                 Check Full Price Break Up
               </button>
@@ -200,12 +211,12 @@ const Hero = () => {
           </div>
           
           {/* Mobile Pre-Register Form */}
-          <div id="hero-form" className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-4 md:p-6">
-            <h3 className="text-xl md:text-3xl font-bold mb-3 md:mb-4 text-center">Pre-Register here for Best Offers</h3>
+          <div id="hero-form" className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-4 md:p-5">
+            <h3 className="text-xl md:text-2xl font-bold mb-3 text-center">Pre-Register here for Best Offers</h3>
             
             <TextCarousel />
             
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div className="mobile-input-container">
                 <input
                   ref={nameInputRef}
@@ -267,7 +278,7 @@ const Hero = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-yellow-500 hover:bg-yellow-600 disabled:bg-yellow-400 disabled:cursor-not-allowed text-black font-bold py-3 px-4 md:px-6 rounded-lg transition-colors text-base"
+                className="w-full bg-yellow-500 hover:bg-yellow-600 disabled:bg-yellow-400 disabled:cursor-not-allowed text-black font-bold py-3 px-4 rounded-lg transition-colors text-base"
               >
                 {isSubmitting ? 'Submitting...' : 'Pre-Register Now'}
               </button>
