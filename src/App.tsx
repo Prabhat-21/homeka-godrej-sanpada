@@ -54,47 +54,52 @@ function App() {
             <>
               {/* Desktop Layout with Integrated Design */}
               <div className="hidden lg:block">
-                {/* Fixed Header with Form CTAs */}
+                {/* Fixed Header */}
                 <div className="fixed top-0 left-0 right-0 z-[1000] bg-white shadow-lg">
-                  <div className="flex h-20">
-                    {/* Main Header Content - Full Width */}
-                    <div className="flex-1 flex items-center px-6">
-                      {/* Logo */}
-                      <div className="mr-8">
+                  <div className="h-20 px-6 flex items-center">
+                    {/* Logo Section */}
+                    <div className="flex-shrink-0 mr-8">
+                      <div className="flex items-center space-x-2">
                         <img src="/img/comman/logo.webp" alt="Godrej Properties" className="h-10 w-auto" />
-                        <span className="text-xs text-gray-600">ETERNAL PALMS</span>
+                        <div className="border-l-2 border-gray-300 pl-2">
+                          <span className="text-xs text-gray-600 font-medium">ETERNAL PALMS</span>
+                        </div>
                       </div>
-                      
-                      {/* Navigation */}
-                      <nav className="flex items-center space-x-6">
-                        <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Home</button>
-                        <button onClick={() => scrollToSection('overview')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Overview</button>
-                        <button onClick={() => scrollToSection('floor-plan')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Layout</button>
-                        <button onClick={() => scrollToSection('sc-price')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Pricing</button>
-                        <button onClick={() => scrollToSection('amenities')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Amenities</button>
-                        <button onClick={() => scrollToSection('gallery')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Gallery</button>
-                        <button onClick={() => scrollToSection('connectivity')} className="text-gray-700 hover:text-blue-600 font-medium text-sm">Location</button>
-                      </nav>
-                      
-                      {/* Partner Branding - Moved to left of CTAs */}
-                      <div className="ml-auto mr-6 text-right">
-                        <p className="text-xs text-gray-500">BY HOMEKA</p>
-                        <p className="text-xs text-gray-600 font-medium">AUTHORIZED CHANNEL PARTNER</p>
+                    </div>
+                    
+                    {/* Navigation */}
+                    <nav className="flex items-center space-x-6 flex-1">
+                      <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Home</button>
+                      <button onClick={() => scrollToSection('overview')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Overview</button>
+                      <button onClick={() => scrollToSection('floor-plan')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Layout</button>
+                      <button onClick={() => scrollToSection('sc-price')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Pricing</button>
+                      <button onClick={() => scrollToSection('amenities')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Amenities</button>
+                      <button onClick={() => scrollToSection('gallery')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Gallery</button>
+                      <button onClick={() => scrollToSection('connectivity')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Location</button>
+                    </nav>
+                    
+                    {/* Right Section with Branding and CTAs */}
+                    <div className="flex items-center space-x-6 flex-shrink-0">
+                      {/* Partner Branding */}
+                      <div className="text-right">
+                        <p className="text-xs text-gray-500 leading-tight">BY HOMEKA</p>
+                        <p className="text-xs text-gray-600 font-medium leading-tight">AUTHORIZED CHANNEL PARTNER</p>
                       </div>
 
-                      {/* CTA Buttons - Smaller width */}
+                      {/* CTA Buttons */}
                       <div className="flex items-center space-x-3">
                         <button 
                           onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'site_visit' } }))}
-                          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-medium"
+                          className="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md"
                         >
                           Organize Site Visit
                         </button>
                         <a 
                           href="tel:+919702978506" 
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium flex items-center"
+                          className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md flex items-center space-x-1"
                         >
-                          <span className="text-xs">📞 +91 97029 78506</span>
+                          <span>📞</span>
+                          <span className="whitespace-nowrap">+91 97029 78506</span>
                         </a>
                       </div>
                     </div>
@@ -103,7 +108,7 @@ function App() {
 
                 {/* Main Content with Sidebar Layout */}
                 <div className="flex pt-20">
-                  {/* Main Content Area - Takes up space minus sidebar */}
+                  {/* Main Content Area */}
                   <div className="flex-1 mr-[400px]">
                     {/* Desktop Banner with Overlay */}
                     <DesktopBanner />
@@ -119,7 +124,7 @@ function App() {
                     <Footer />
                   </div>
                   
-                  {/* Sticky Form Sidebar - Fixed width */}
+                  {/* Sticky Form Sidebar */}
                   <div className="w-[400px] fixed right-0 top-20 bottom-0 z-[999]">
                     <StickyEnquiryForm />
                   </div>
