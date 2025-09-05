@@ -59,12 +59,7 @@ function App() {
                   <div className="h-20 px-6 flex items-center">
                     {/* Logo Section */}
                     <div className="flex-shrink-0 mr-8">
-                      <div className="flex items-center space-x-2">
-                        <img src="/img/comman/logo.webp" alt="Godrej Properties" className="h-10 w-auto" />
-                        <div className="border-l-2 border-gray-300 pl-2">
-                          <span className="text-xs text-gray-600 font-medium">ETERNAL PALMS</span>
-                        </div>
-                      </div>
+                      <img src="/img/comman/logo.webp" alt="Godrej Properties" className="h-10 w-auto" />
                     </div>
                     
                     {/* Navigation */}
@@ -78,13 +73,27 @@ function App() {
                       <button onClick={() => scrollToSection('connectivity')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Location</button>
                     </nav>
                     
-                    {/* Right Section with Branding */}
-                    <div className="flex items-center space-x-6 flex-shrink-0">
+                    {/* Right Section with Branding and CTAs */}
+                    <div className="flex items-center space-x-4 flex-shrink-0">
                       {/* Partner Branding */}
                       <div className="text-right">
                         <p className="text-xs text-gray-500 leading-tight">BY HOMEKA</p>
                         <p className="text-xs text-gray-600 font-medium leading-tight">AUTHORIZED CHANNEL PARTNER</p>
                       </div>
+
+                      {/* CTA Buttons */}
+                      <button 
+                        onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'site_visit' } }))}
+                        className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md"
+                      >
+                        Organize Site Visit
+                      </button>
+                      <a 
+                        href="tel:+919702978506" 
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md flex items-center"
+                      >
+                        <span>📞 +91 97029 78506</span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -107,28 +116,9 @@ function App() {
                     <Footer />
                   </div>
                   
-                  {/* Sticky Form Sidebar with CTAs on top */}
-                  <div className="w-[400px] fixed right-0 top-20 bottom-0 z-[999] flex flex-col">
-                    {/* CTA Buttons at top of sidebar */}
-                    <div className="bg-gray-50 border-b border-gray-200 p-3 flex items-center justify-around space-x-2">
-                      <button 
-                        onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'site_visit' } }))}
-                        className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md flex-1"
-                      >
-                        Organize Site Visit
-                      </button>
-                      <a 
-                        href="tel:+919702978506" 
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md flex items-center justify-center flex-1"
-                      >
-                        <span>📞 +91 97029 78506</span>
-                      </a>
-                    </div>
-                    
-                    {/* Form Content */}
-                    <div className="flex-1 overflow-hidden">
-                      <StickyEnquiryForm />
-                    </div>
+                  {/* Sticky Form Sidebar */}
+                  <div className="w-[400px] fixed right-0 top-20 bottom-0 z-[999]">
+                    <StickyEnquiryForm />
                   </div>
                 </div>
               </div>
