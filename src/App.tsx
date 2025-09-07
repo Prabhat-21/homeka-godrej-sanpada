@@ -57,9 +57,12 @@ function App() {
                 {/* Fixed Header - Reduced height and logo size */}
                 <div className="fixed top-0 left-0 right-0 z-[1000] bg-white shadow-lg">
                   <div className="h-16 px-6 flex items-center">
-                    {/* Logo Section - Reduced size */}
-                    <div className="flex-shrink-0 mr-6">
-                      <img src="/img/comman/godrej_logo.png" alt="Godrej Eternal Palms" className="h-8 w-auto" />
+                    {/* Logo Section with Project Name */}
+                    <div className="flex-shrink-0 mr-6 flex items-center space-x-3">
+                      <img src="/img/comman/godrej_logo.png" alt="Godrej Logo" className="h-8 w-auto" />
+                      <div className="border-l border-gray-300 pl-3">
+                        <span className="text-gray-800 font-semibold text-sm tracking-wider">ETERNAL PALMS</span>
+                      </div>
                     </div>
                     
                     {/* Navigation */}
