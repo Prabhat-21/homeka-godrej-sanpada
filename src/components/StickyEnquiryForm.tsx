@@ -110,8 +110,8 @@ const StickyEnquiryForm = () => {
   }, []);
 
   return (
-    <div className="w-full h-full bg-white shadow-2xl border-l border-gray-200 flex flex-col">
-      <div className="flex-1 flex flex-col p-5 overflow-y-auto">
+    <div className="w-full h-full bg-white shadow-2xl flex flex-col">
+      <div className="flex-1 flex flex-col p-5">
         {/* Header - More compact for desktop */}
         <div className="text-center mb-3">
           <p className="text-blue-600 font-semibold text-xs mb-1">New Launch</p>
@@ -223,7 +223,7 @@ const StickyEnquiryForm = () => {
         </form>
 
         {/* Features - Compact */}
-        <div className="mt-3 pt-3 border-t">
+        <div className="mt-3 pt-3">
           <h4 className="font-semibold text-gray-800 mb-2 text-xs">Why Choose Godrej Sanpada?</h4>
           <ul className="space-y-1 text-xs text-gray-600">
             <li className="flex items-start">
@@ -246,7 +246,7 @@ const StickyEnquiryForm = () => {
         </div>
 
         {/* Contact Info - Compact */}
-        <div className="mt-auto pt-3 border-t text-center">
+        <div className="mt-auto pt-3 text-center">
           <p className="text-xs text-gray-600 mb-1">Need immediate assistance?</p>
           <a href="tel:+919702978506" className="text-blue-600 font-semibold text-sm hover:text-blue-700">
             📞 +91 97029 78506
