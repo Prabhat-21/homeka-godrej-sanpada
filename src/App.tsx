@@ -54,12 +54,12 @@ function App() {
             <>
               {/* Desktop Layout with Integrated Design */}
               <div className="hidden lg:block">
-                {/* Fixed Header */}
+                {/* Fixed Header - Reduced height and logo size */}
                 <div className="fixed top-0 left-0 right-0 z-[1000] bg-white shadow-lg">
-                  <div className="h-20 px-6 flex items-center">
-                    {/* Logo Section */}
-                    <div className="flex-shrink-0 mr-8">
-                      <img src="/img/comman/logo.webp" alt="Godrej Properties" className="h-10 w-auto" />
+                  <div className="h-16 px-6 flex items-center">
+                    {/* Logo Section - Reduced size */}
+                    <div className="flex-shrink-0 mr-6">
+                      <img src="/img/comman/godrej_logo.png" alt="Godrej Eternal Palms" className="h-8 w-auto" />
                     </div>
                     
                     {/* Navigation */}
@@ -78,13 +78,13 @@ function App() {
                       {/* CTA Buttons */}
                       <button 
                         onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'site_visit' } }))}
-                        className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md"
+                        className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md"
                       >
                         Organize Site Visit
                       </button>
                       <a 
                         href="tel:+919702978506" 
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md flex items-center"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors shadow-sm hover:shadow-md flex items-center"
                       >
                         <span>📞 +91 97029 78506</span>
                       </a>
@@ -92,8 +92,8 @@ function App() {
                   </div>
                 </div>
 
-                {/* Main Content with Sidebar Layout */}
-                <div className="flex pt-20">
+                {/* Main Content with Sidebar Layout - Adjusted for smaller header */}
+                <div className="flex pt-16">
                   {/* Main Content Area */}
                   <div className="flex-1 mr-[420px]">
                     {/* Desktop Banner with Overlay */}
@@ -111,7 +111,7 @@ function App() {
                   </div>
                   
                   {/* Sticky Form Sidebar - More separated design */}
-                  <div className="w-[400px] fixed right-5 top-24 bottom-5 z-[999]">
+                  <div className="w-[400px] fixed right-5 top-20 bottom-5 z-[999]">
                     <div className="h-full bg-white rounded-lg shadow-2xl border border-gray-200">
                       <StickyEnquiryForm />
                     </div>
