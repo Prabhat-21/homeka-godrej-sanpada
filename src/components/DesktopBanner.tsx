@@ -49,7 +49,7 @@ const DesktopBanner = () => {
 
       {/* Left Content Card - Smaller and positioned higher */}
       <div className="absolute inset-0">
-        <div className="container mx-auto px-6 h-full flex items-center">
+        <div className="container mx-auto px-6 h-full flex items-start pt-8">
           <div className="bg-white rounded-xl p-4 shadow-xl max-w-xs">
             <div className="text-center">
               <p className="text-blue-600 font-semibold text-xs mb-1">New Launch</p>
