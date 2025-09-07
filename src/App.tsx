@@ -111,8 +111,8 @@ function App() {
                     <Footer />
                   </div>
                   
-                  {/* Sticky Form Sidebar - Remove border and scroll */}
-                  <div className="w-[400px] fixed right-5 top-20 bottom-5 z-[999]">
+                  {/* Sticky Form Sidebar - Full edge alignment */}
+                  <div className="w-[400px] fixed right-0 top-16 bottom-0 z-[999]">
                     <div className="h-full bg-white shadow-2xl">
                       <StickyEnquiryForm />
                     </div>
