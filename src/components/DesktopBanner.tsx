@@ -27,7 +27,7 @@ const DesktopBanner = () => {
   };
 
   return (
-    <div id="home" className="relative h-[calc(100vh-80px)]">
+    <div id="home" className="relative h-[calc(100vh-64px)]">
       {/* Banner Images */}
       <div className="relative w-full h-full">
         {bannerImages.map((image, index) => (
@@ -47,19 +47,19 @@ const DesktopBanner = () => {
         ))}
       </div>
 
-      {/* Left Content Card - Smaller and with animations */}
+      {/* Left Content Card - Smaller and positioned higher */}
       <div className="absolute inset-0">
-        <div className="container mx-auto px-6 h-full flex items-center">
-          <div className="bg-white rounded-2xl p-6 shadow-2xl max-w-sm">
+        <div className="container mx-auto px-6 h-full flex items-start pt-16">
+          <div className="bg-white rounded-xl p-4 shadow-xl max-w-xs">
             <div className="text-center">
               <p className="text-blue-600 font-semibold text-xs mb-1">New Launch</p>
-              <h1 className="text-2xl font-bold mb-1 text-gray-800">Godrej Sanpada</h1>
+              <h1 className="text-lg font-bold mb-1 text-gray-800">Godrej Sanpada</h1>
               <p className="text-xs text-gray-600 mb-0.5">At Sanpada, Navi Mumbai</p>
-              <p className="text-xs text-gray-600 mb-3">By Godrej Properties</p>
+              <p className="text-xs text-gray-600 mb-2">By Godrej Properties</p>
 
-              {/* Benefits Box with Animations - All 5 points */}
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-3 mb-3 animate-glow-pulse">
-                <div className="space-y-1.5">
+              {/* Benefits Box with Animations - Smaller spacing */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-dashed border-blue-300 rounded-lg p-2 mb-2 animate-glow-pulse">
+                <div className="space-y-1">
                   <div className="flex items-center justify-center opacity-0 animate-slide-bounce" style={{ animationDelay: '0.2s' }}>
                     <span className="text-blue-600 font-semibold text-xs">🏗️ 2 Towers • G+35 Storeys</span>
                   </div>
@@ -78,17 +78,17 @@ const DesktopBanner = () => {
                 </div>
               </div>
               
-              <p className="text-gray-700 text-sm mb-1 opacity-0 animate-fade-up" style={{ animationDelay: '1.2s' }}>
+              <p className="text-gray-700 text-xs mb-1 opacity-0 animate-fade-up" style={{ animationDelay: '1.2s' }}>
                 Luxurious 2 & 3 BHK Starting At
               </p>
-              <div className="text-2xl font-bold mb-3 text-gray-800 opacity-0 animate-fade-up" style={{ animationDelay: '1.4s' }}>
+              <div className="text-xl font-bold mb-2 text-gray-800 opacity-0 animate-fade-up" style={{ animationDelay: '1.4s' }}>
                 <span className="text-blue-600">Rs. 3.5 Cr*</span>
-                <span className="text-base ml-1">Onwards</span>
+                <span className="text-sm ml-1">Onwards</span>
               </div>
               
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('showEngagementPopup', { detail: { type: 'costing' } }))}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-lg text-sm transition-all transform hover:scale-105 opacity-0 animate-fade-up"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-lg text-xs transition-all transform hover:scale-105 opacity-0 animate-fade-up"
                 style={{ animationDelay: '1.6s' }}
               >
                 Check Full Price Break Up
