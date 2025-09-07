@@ -93,10 +93,10 @@ function App() {
                   </div>
                 </div>
 
-                {/* Main Content with Sidebar Layout - Adjusted for smaller header */}
+                {/* Main Content with Sidebar Layout - Adjusted for full-width sidebar */}
                 <div className="flex pt-16">
                   {/* Main Content Area */}
-                  <div className="flex-1 mr-[420px]">
+                  <div className="flex-1 mr-[400px]">
                     {/* Desktop Banner with Overlay */}
                     <DesktopBanner />
                     
