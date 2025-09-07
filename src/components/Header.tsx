@@ -57,23 +57,48 @@ const Header = () => {
     } else {
       const element = document.getElementById(elementId);
       if (element) {
-        const headerHeight = 60;
+        // Different header height for mobile vs desktop
+        const headerHeight = isMobile ? 64 : 64; // Both are now 64px
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+        
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
         });
+      } else {
+        // Fallback: if element not found, try alternative IDs
+        const fallbackIds = {
+          'sc-price': 'pricing', // Alternative ID
+          'floor-plan': 'layout', // Alternative ID
+          'connectivity': 'location' // Alternative ID
+        };
+        
+        const fallbackId = fallbackIds[elementId];
+        if (fallbackId) {
+          const fallbackElement = document.getElementById(fallbackId);
+          if (fallbackElement) {
+            const headerHeight = isMobile ? 64 : 64;
+            const elementPosition = fallbackElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
       }
     }
     setIsMenuOpen(false);
   };
 
+  // Updated mobile menu items with correct section IDs
   const mobileMenuItems = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'overview', label: 'Overview', icon: Home },
-    { id: 'sc-price', label: 'Proposed Price', icon: DollarSign },
-    { id: 'floor-plan', label: 'Site Plan', icon: Layout },
+    { id: 'sc-price', label: 'Pricing', icon: DollarSign }, // Changed from "Proposed Price"
+    { id: 'floor-plan', label: 'Layout', icon: Layout }, // Changed from "Site Plan"
     { id: 'amenities', label: 'Amenities', icon: Wifi },
     { id: 'connectivity', label: 'Location', icon: MapPin },
     { id: 'gallery', label: 'Gallery', icon: Home },
@@ -88,15 +113,18 @@ const Header = () => {
       }));
       setIsMenuOpen(false);
     } else {
-      smoothScrollTo(item.id);
+      // Add small delay to ensure menu closes before scrolling
+      setTimeout(() => {
+        smoothScrollTo(item.id);
+      }, 100);
     }
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-[10001] h-16 lg:h-20">
+    <header className="bg-white shadow-lg sticky top-0 z-[10001] h-16 lg:h-16">
       <div className="container mx-auto px-3 py-2 lg:py-2 max-w-7xl relative z-[10002] h-full">
         <div className="flex items-center h-full">
-          {/* Logo Section */}
+          {/* Logo Section - Same for mobile and desktop */}
           <div className="flex items-center">
             <img src="/img/comman/logo.webp" alt="Godrej Properties Logo" className="h-6 lg:h-8 w-auto" />
           </div>
@@ -131,7 +159,7 @@ const Header = () => {
           )}
         </div>
 
-        {/* Mobile Navigation - Simplified dropdown style */}
+        {/* Mobile Navigation - Fixed dropdown style */}
         {isMobile && isMenuOpen && (
           <nav className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 z-[10001]">
             <div className="py-2">
