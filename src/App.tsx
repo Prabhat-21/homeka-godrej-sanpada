@@ -111,9 +111,9 @@ function App() {
                     <Footer />
                   </div>
                   
-                  {/* Sticky Form Sidebar - More separated design */}
+                  {/* Sticky Form Sidebar - Remove border and scroll */}
                   <div className="w-[400px] fixed right-5 top-20 bottom-5 z-[999]">
-                    <div className="h-full bg-white rounded-lg shadow-2xl border border-gray-200">
+                    <div className="h-full bg-white rounded-lg shadow-2xl">
                       <StickyEnquiryForm />
                     </div>
                   </div>
