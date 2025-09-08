@@ -63,8 +63,8 @@ function App() {
                       <span className="text-gray-800 font-semibold text-sm tracking-wider">ETERNAL PALMS</span>
                     </div>
                     
-                    {/* Navigation - Moved to right */}
-                    <nav className="flex items-center space-x-6 ml-auto mr-6">
+                    {/* Navigation - Moved to align with banner content */}
+                    <nav className="flex items-center space-x-6 ml-auto mr-12">
                       <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Home</button>
                       <button onClick={() => scrollToSection('overview')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Overview</button>
                       <button onClick={() => scrollToSection('floor-plan')} className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors">Layout</button>
