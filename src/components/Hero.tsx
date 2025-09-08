@@ -20,8 +20,8 @@ const TextCarousel = () => {
   }, [messages.length]);
 
   return (
-    <div className="mb-6">
-      <div className="text-center mb-4 min-h-[3rem] flex items-center justify-center">
+    <div className="mb-4">
+      <div className="text-center mb-3 min-h-[2.5rem] flex items-center justify-center">
         <p className="text-white text-sm md:text-base transition-opacity duration-500">
           {messages[currentSlide]}
         </p>
@@ -161,10 +161,9 @@ const Hero = () => {
     <section id="home" className="relative">
       {/* Mobile Layout Only - Hero section for mobile */}
       <div className="lg:hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative container mx-auto px-4 py-6 md:py-12">
+        <div className="relative container mx-auto px-4 py-4 md:py-8">
           {/* Main Content Card */}
-          <div className="bg-white text-gray-800 rounded-2xl p-4 md:p-6 shadow-2xl mb-6">
+          <div className="bg-white text-gray-800 rounded-2xl p-4 md:p-6 shadow-2xl mb-4">
             <div className="text-center mb-3">
               <p className="text-blue-600 font-semibold text-sm md:text-base mb-1">New Launch</p>
               <h1 className="text-2xl md:text-3xl font-bold mb-1 text-gray-800">
@@ -210,7 +209,7 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Mobile Pre-Register Form */}
+          {/* Mobile Pre-Register Form - Remove gray borders */}
           <div id="hero-form" className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-4 md:p-5">
             <h3 className="text-xl md:text-2xl font-bold mb-3 text-center">Pre-Register here for Best Offers</h3>
             
